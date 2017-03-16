@@ -1,6 +1,8 @@
 # Squid proxy
 Reverse squid proxy on container in docker-compose
 
+Proxy is not prepare for production.
+
 ## Technology 
 - squid3
 - dnsmasq
@@ -11,6 +13,7 @@ Reverse squid proxy on container in docker-compose
 
 ```
 version: '2'
+services:
     squid-proxy:
         image: lukasojd/squid-proxy:latest
         volumes:

@@ -1,8 +1,9 @@
 version: '2'
+services:
     squid-proxy:
-        image: lukasojd/squid-proxy:latest
+        image: lukasojd/squid-proxy:1.1.0
         volumes:
-          - /var/run/docker.sock:/tmp/docker.sock:ro
+          - /var/run/docker.sock:/var/run/docker.sock:ro
           - /srv/docker/squid/cache:/var/spool/squid3
         ports:
           - "3128:3128"
