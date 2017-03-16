@@ -37,7 +37,7 @@ You only add from your container VIRTUAL_HOST with domain and squid-proxy will b
 
 ## Customize
 
-For customize squid we can add own configs for dnsmasq (volume). We only can'n change docker.conf... 
+For customize squid we can add own configs for dnsmasq (volume). We only can'n change docker.conf. Docker.conf is auto generate by docker-gen.
 
 ```
 version: '2'
