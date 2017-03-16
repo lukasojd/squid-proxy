@@ -17,7 +17,7 @@ services:
     squid-proxy:
         image: lukasojd/squid-proxy:1.1.0
         volumes:
-          - /var/run/docker.sock:/tmp/docker.sock:ro
+          - /var/run/docker.sock:/var/run/docker.sock:ro
           - /srv/docker/squid/cache:/var/spool/squid3
         ports:
           - "3128:3128"
@@ -45,7 +45,7 @@ services:
     squid-proxy:
         image: lukasojd/squid-proxy:1.1.0
         volumes:
-          - /var/run/docker.sock:/tmp/docker.sock:ro
+          - /var/run/docker.sock:/var/run/docker.sock:ro
           - /srv/docker/squid/cache:/var/spool/squid3
           - folder_with_my_configs/:/etc/dnsmasq.d/
         ports:
