@@ -15,7 +15,7 @@ Proxy is not prepare for production.
 version: '2'
 services:
     squid-proxy:
-        image: lukasojd/squid-proxy:latest
+        image: lukasojd/squid-proxy:1.1.0
         volumes:
           - /var/run/docker.sock:/tmp/docker.sock:ro
           - /srv/docker/squid/cache:/var/spool/squid3
@@ -35,3 +35,19 @@ services:
 
 You only add from your container VIRTUAL_HOST with domain and squid-proxy will be proxy on container...
 
+## Customize
+
+For customize squid we can add own configs for dnsmasq (volume). We only can'n change docker.conf... 
+
+```
+version: '2'
+services:
+    squid-proxy:
+        image: lukasojd/squid-proxy:1.1.0
+        volumes:
+          - /var/run/docker.sock:/tmp/docker.sock:ro
+          - /srv/docker/squid/cache:/var/spool/squid3
+          - folder_with_my_configs/:/etc/dnsmasq.d/
+        ports:
+          - "3128:3128"
+```
