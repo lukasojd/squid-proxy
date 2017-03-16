@@ -1,0 +1,7 @@
+txt-record=dockers
+{{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}
+{{ range $index, $value := $containers }}
+{{ $network := index $value.Networks 0 }}
+host-record={{ $host  }},{{ $network.IP }}
+{{ end }}
+{{ end }}
